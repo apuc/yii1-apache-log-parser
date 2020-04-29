@@ -1,0 +1,9 @@
+[Fri Apr 24 23:41:15.688376 2020] [mpm_prefork:notice] [pid 5809] AH00163: Apache/2.4.18 (Ubuntu) configured -- resuming normal operations
+[Fri Apr 24 23:41:15.688450 2020] [core:notice] [pid 5809] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Apr 24 23:47:50.030940 2020] [mpm_prefork:notice] [pid 5809] AH00169: caught SIGTERM, shutting down
+[Fri Apr 24 23:47:51.182198 2020] [mpm_prefork:notice] [pid 6133] AH00163: Apache/2.4.18 (Ubuntu) configured -- resuming normal operations
+[Fri Apr 24 23:47:51.182239 2020] [core:notice] [pid 6133] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Apr 24 23:51:53.833127 2020] [:error] [pid 6138] [client 127.0.0.1:52240] PHP Parse error:  syntax error, unexpected 'phpinfo' (T_STRING) in /var/www/parseapache.loc/public_html/index.php on line 3
+[Fri Apr 24 23:51:56.056750 2020] [:error] [pid 6139] [client 127.0.0.1:52242] PHP Parse error:  syntax error, unexpected 'phpinfo' (T_STRING) in /var/www/parseapache.loc/public_html/index.php on line 3
+[Fri Apr 24 23:51:56.654061 2020] [:error] [pid 6140] [client 127.0.0.1:52244] PHP Parse error:  syntax error, unexpected 'phpinfo' (T_STRING) in /var/www/parseapache.loc/public_html/index.php on line 3
+[Fri Apr 24 23:51:57.133965 2020] [:error] [pid 6300] [client 127.0.0.1:52246] PHP Parse error:  syntax error, unexpected 'phpinfo' (T_STRING) in /var/www/parseapache.loc/public_html/index.php on line 3
