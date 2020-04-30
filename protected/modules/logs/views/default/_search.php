@@ -11,6 +11,16 @@
 	'method'=>'get',
 )); ?>
 
+    <div class="row">
+        <?php echo $form->label($model,'group_ip'); ?>
+        <?php echo $form->checkBox($model,'group_ip'); ?>
+<!--        <input type="checkbox" name="group_ip" id="group_ip">-->
+    </div>
+    <div class="row">
+        <?php echo $form->label($model,'group_date'); ?>
+        <?php echo $form->checkBox($model,'group_date'); ?>
+<!--        <input type="checkbox" name="group_date" id="group_date">-->
+    </div>
 	<div class="row">
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id'); ?>

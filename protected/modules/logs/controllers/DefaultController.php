@@ -146,9 +146,10 @@ class DefaultController extends Controller
     {
         $model=new Logs('search');
         $model->unsetAttributes();  // clear any default values
-        if(isset($_GET['Logs']))
+        if(isset($_GET['Logs'])) {
             $model->attributes=$_GET['Logs'];
-
+        }
+//var_dump($model); die();
         $this->render('admin',array(
             'model'=>$model,
         ));

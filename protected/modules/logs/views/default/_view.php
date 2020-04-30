@@ -38,11 +38,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request')); ?>:</b>
-	<?php echo CHtml::encode($data->request); ?>
+	<?php echo '<div class="fixed-width">'.CHtml::encode($data->request).'</div>'; ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('browser')); ?>:</b>
-	<?php echo CHtml::encode($data->browser); ?>
+	<?php echo '<div class="fixed-width">'.CHtml::encode($data->browser).'</div>'; ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('pid')); ?>:</b>

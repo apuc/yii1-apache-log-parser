@@ -16,9 +16,14 @@
  * @property string $browser
  * @property integer $pid
  * @property string $msg
+ * @property bool $group_ip
+ * @property bool $group_date
  */
 class Logs extends CActiveRecord
 {
+    public $group_ip;
+    public $group_date;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -41,6 +46,8 @@ class Logs extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, filename, type, datetime, ip, status, responseBytes, url, request, browser, pid, msg, created_at', 'safe', 'on'=>'search'),
+            array('group_ip', 'safe'),
+            array('group_date', 'safe')
 		);
 	}
 
@@ -73,6 +80,8 @@ class Logs extends CActiveRecord
 			'browser' => 'Browser',
 			'pid' => 'Pid',
 			'msg' => 'Msg',
+            'group_ip' => 'group_ip',
+            'group_date' => 'group_date',
 		);
 	}
 
@@ -106,6 +115,11 @@ class Logs extends CActiveRecord
 		$criteria->compare('browser',$this->browser,true);
 		$criteria->compare('pid',$this->pid);
 		$criteria->compare('msg',$this->msg,true);
+		$criteria->compare('group_ip',$this->group_ip,true);
+		if($this->group_ip)
+		    $criteria->group = 'ip';
+		elseif($this->group_date)
+            $criteria->group = 'DATE(datetime)';
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

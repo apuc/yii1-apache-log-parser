@@ -33,10 +33,31 @@ class ApiController extends Controller
             echo json_encode(['error' => 'empty data']);
     }
 
+    public function actionGroupip()
+    {
+        $data = Yii::app()->db->createCommand()->select('*')->from('logs')->group('ip')->queryAll();
+
+        echo json_encode($data);
+    }
+
+    public function actionGroupdate()
+    {
+        $data = $this->rawGroupSql();
+
+        echo json_encode($data);
+    }
+
     public function rawSql($date1, $time1, $date2, $time2)
     {
         $sql = 'SELECT * FROM logs WHERE datetime BETWEEN "'
             . $date1 . ' ' . $time1 . '" AND "' . $date2 . ' ' . $time2 . '"';
+
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    public function rawGroupSql()
+    {
+        $sql = 'SELECT * FROM logs GROUP BY DATE(datetime)';
 
         return Yii::app()->db->createCommand($sql)->queryAll();
     }

@@ -41,21 +41,35 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php
+
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'logs-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+//    'htmlOptions' => array('class' => 'table'),
+//    'itemsCssClass' => 'table table-hover table-striped',
+//    'loadingCssClass' => 'grid-preloader',
 	'columns'=>array(
-		'id',
+        'ip',
 		'filename',
 		'type',
 		'datetime',
-		'ip',
 		'status',
 		'responseBytes',
 		'url',
-		'request',
-		'browser',
+        array(
+            'name' => 'request',
+            'value' => $model->request,
+            'htmlOptions' => array('class' => 'fixed-width'),
+            //'headerHtmlOptions' => array('class' => 'defect'),
+        ),
+        array(
+            'name' => 'browser',
+            'value' => $model->browser,
+            'htmlOptions' => array('class' => 'fixed-width'),
+            //'headerHtmlOptions' => array('class' => 'defect'),
+        ),
 		'pid',
 		'msg',
 		array(
