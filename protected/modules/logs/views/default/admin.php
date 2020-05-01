@@ -60,13 +60,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		'url',
         array(
             'name' => 'request',
-            'value' => $model->request,
+            //'value' => $model->request,
             'htmlOptions' => array('class' => 'fixed-width'),
             //'headerHtmlOptions' => array('class' => 'defect'),
         ),
         array(
             'name' => 'browser',
-            'value' => $model->browser,
+            //'value' => $model->browser,
             'htmlOptions' => array('class' => 'fixed-width'),
             //'headerHtmlOptions' => array('class' => 'defect'),
         ),

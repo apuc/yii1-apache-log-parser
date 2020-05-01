@@ -98,8 +98,8 @@ return array(
     'params' => array(
         // this is used in contact page
         'adminEmail' => 'webmaster@example.com',
-        'logPath' => '/var/www/domains/logparser/logs/',
-        'accessMask' => 'access.log*',
-        'errorMask' => 'error.log*',
+        'logPath' => '/var/log/apache2/',
+        'accessMask' => 'access.log{,.[0-9]}',
+        'errorMask' => 'error.log{,.[0-9]}',
     ),
 );

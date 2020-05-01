@@ -115,7 +115,6 @@ class Logs extends CActiveRecord
 		$criteria->compare('browser',$this->browser,true);
 		$criteria->compare('pid',$this->pid);
 		$criteria->compare('msg',$this->msg,true);
-		$criteria->compare('group_ip',$this->group_ip,true);
 		if($this->group_ip)
 		    $criteria->group = 'ip';
 		elseif($this->group_date)
@@ -176,7 +175,7 @@ class Logs extends CActiveRecord
     public static function reading()
     {
         try {
-            foreach (glob(Yii::app()->params['logPath'] . Yii::app()->params['accessMask']) as $docFile) {
+            foreach (glob(Yii::app()->params['logPath'] . Yii::app()->params['accessMask'], GLOB_BRACE) as $docFile) {
                 $file = new ApacheParserAccess($docFile);
 
                 $filename = str_replace(Yii::app()->params['logPath'], '', $docFile);

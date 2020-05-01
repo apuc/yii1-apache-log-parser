@@ -149,7 +149,7 @@ class DefaultController extends Controller
         if(isset($_GET['Logs'])) {
             $model->attributes=$_GET['Logs'];
         }
-//var_dump($model); die();
+
         $this->render('admin',array(
             'model'=>$model,
         ));
